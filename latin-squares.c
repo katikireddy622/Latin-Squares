@@ -1,0 +1,185 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+int m=0,n,i=0,j,k,l,o=0,e[10],f,a[150][50],c[10][10],s,q=0,count,v,p,x=0,y=0,b[30][30][30],ba[10][30],ba1[10][30],ba2[10][30],ba3[10][30],ba4[10][30],count1=0,count2=0,count3=0;
+clrscr();
+printf("enter the n value:");
+scanf("%d",&n);
+for(i=0;i<n;i++)
+scanf("%d",&a[0][i]);
+a[0][n]=0;
+for(i=0;i<=o;i++)
+{
+for(j=a[i][n];j<(n);j++)
+{
+for(k=j+1;k<(n);k++)
+{
+o++;
+for(l=0;l<(n);l++)
+{
+if(l==j)
+a[o][l]=a[i][k];
+else
+{
+if(l==k)
+a[o][l]=a[i][j];
+else
+a[o][l]=a[i][l];
+}
+}
+a[o][n]=j+1;
+}
+}
+}
+l=0;
+for(i=0;i<5;i++)
+b[1][23][i]=a[119][i];
+for(i=0;i<=o;i++)
+{
+for(j=0;j<5;j++)
+if(a[i][j]==1)
+p=j;
+if(p==0)
+{
+for(k=0;k<5;k++)
+b[0][l][k]=a[i][k];
+l++;
+}
+}
+l=0;
+for(i=0;i<o;i++)
+{
+for(j=0;j<5;j++)
+if(a[i][j]==1)
+p=j;
+if(p==1)
+{
+for(k=0;k<5;k++)
+{
+b[1][l][k]=a[i][k];
+}
+l++;
+}
+}
+l=0;
+for(i=0;i<=o;i++)
+{
+for(j=0;j<5;j++)
+if(a[i][j]==1)
+p=j;
+if(p==2)
+{
+for(k=0;k<5;k++)
+b[2][l][k]=a[i][k];
+l++;
+}
+}
+l=0;
+for(i=0;i<=o;i++)
+{
+for(j=0;j<5;j++)
+if(a[i][j]==1)
+p=j;
+if(p==3)
+{
+for(k=0;k<5;k++)
+b[3][l][k]=a[i][k];
+l++;
+}
+}
+l=0;
+for(i=0;i<=o;i++)
+{
+for(j=0;j<5;j++)
+if(a[i][j]==1)
+p=j;
+if(p==4)
+{
+for(k=0;k<5;k++)
+b[4][l][k]=a[i][k];
+l++;
+}
+}
+for(i=0;i<24;i++)
+{
+ e[0]=i;
+for(j=0;j<24;j++)
+{ e[1]=j;
+	for(x=1;x<2;x++)
+	{
+	if((b[0][e[0]][0]==b[1][e[1]][0]) || (b[0][e[0]][1]==b[1][e[1]][1]) || (b[0][e[0]][2]==b[1][e[1]][2]) || (b[0][e[0]][3]==b[1][e[1]][3]) || (b[0][e[0]][4]==b[1][e[1]][4]))
+	{
+	count++;
+	x=5;
+	}
+	}
+if(count==0)
+{
+for(k=0;k<24;k++)
+{  e[2]=k;
+for(p=0;p<2;p++)
+{
+	for(x=p+1;x<3;x++)
+	{
+	if((b[p][e[p]][0]==b[x][e[x]][0]) || (b[p][e[p]][1]==b[x][e[x]][1]) || (b[p][e[p]][2]==b[x][e[x]][2]) || (b[p][e[p]][3]==b[x][e[x]][3]) || (b[p][e[p]][4]==b[x][e[x]][4]))
+	{
+	count1++;
+	p=5;
+	x=5;
+	}
+	}
+	}
+if(count1==0)
+{
+for(l=0;l<24;l++)
+{ e[3]=l;
+for(p=0;p<3;p++)
+{
+	for(x=p+1;x<4;x++)
+	{
+	if((b[p][e[p]][0]==b[x][e[x]][0]) || (b[p][e[p]][1]==b[x][e[x]][1]) || (b[p][e[p]][2]==b[x][e[x]][2]) || (b[p][e[p]][3]==b[x][e[x]][3]) || (b[p][e[p]][4]==b[x][e[x]][4]))
+	{
+	count2++;
+	p=5;
+	x=5;
+	}
+	}
+	}
+
+if(count2==0)
+{
+for(f=0;f<24;f++)
+{ e[4]=f;
+for(p=0;p<5;p++)
+{
+	for(x=p+1;x<5;x++)
+	{
+	if((b[p][e[p]][0]==b[x][e[x]][0]) || (b[p][e[p]][1]==b[x][e[x]][1]) || (b[p][e[p]][2]==b[x][e[x]][2]) || (b[p][e[p]][3]==b[x][e[x]][3]) || (b[p][e[p]][4]==b[x][e[x]][4]))
+	{
+	count3++;
+	p=5;
+	x=5;
+	}
+	}
+	}
+	if(count3==0)
+	q++;
+	count3=0;
+}
+}
+count2=0;
+}
+}
+count1=0;
+}
+}
+count=0;
+}
+}
+  printf("%d ",q);
+
+getch();
+
+}
+
